@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" id="token">
+	<script>
+		(function() {
+			var sp = document.getElementById("token");
+			sp.value = window.location.hash;
+		})();
+
+		function copyToClip(event) {
+			console.log("Copying?");
+
+			var sp = document.getElementById("token");
+			sp.select();
+
+			document.execCommand("Copy");
+			alert("Copied the text: " + copyText.value);
+		}
+	</script>
+	<button onClick="copyToClip()">Token</button>
+</body>
+</html>
